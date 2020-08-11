@@ -1,1 +1,27 @@
 <h1>New Event</h1>
+
+<%= form_with scope: :event, local: true do |form| %>
+    <p>
+        <%= form.label :Nombre %><br>
+        <%= form.text_field :Event_name %>
+    </p>
+
+    <p>
+        <%= form.label :Categoria %><br>
+        <%= select_tag(:category_id, options_for_select([['Conferencia', 1], ['Seminario', 2], ['Congreso', 3], ['Curso', 4]])) %>
+    </p>
+
+    <p>
+        <%= form.label :Tipo %><br>
+        <%= select_tag(:category_id, options_for_select([['Presencial', 1], ['Virtual', 2]])) %>
+    </p>
+
+    <p>
+        <%= form.label :Dirección %><br>
+        <%= form.text_field :event_location %>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
