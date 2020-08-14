@@ -6,7 +6,7 @@ class Api::UserController < ApplicationController
         if @user.save
             render json: {message: 'User succesfully created.'}, status: 200
         else
-            render json: @user.error
+            render json: @user.errors
         end
     end
     
