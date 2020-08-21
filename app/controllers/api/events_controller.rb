@@ -1,13 +1,11 @@
 class Api::EventsController < ApplicationController
 
     def post_event
-        puts 'ACA ESTOYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
         @event = @current_user.events.create(event_params)
-        puts @current_user.username
         if @event.errors
             render json: @event.errors
         else
-            render json: @event
+            render json: @event, status: 400
         end
     end
 

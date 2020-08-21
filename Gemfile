@@ -48,3 +48,5 @@ gem 'jwt'
 
 #Faclilitates comunication between controller and model
 gem 'simple_command'
+
+gem 'rack-cors'
